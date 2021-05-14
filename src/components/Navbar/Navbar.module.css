@@ -1,0 +1,20 @@
+
+  
+.item {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: auto;
+    color: white;
+}
+
+.item a{
+    color:black;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: bold;
+    text-shadow: 1px 1px 1px black;
+}
+

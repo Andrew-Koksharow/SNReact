@@ -1,0 +1,26 @@
+.avatar img{
+  width: 150px;
+  }
+
+.avatar {
+  /* grid-area: a; */
+}
+  
+  .item {
+    /* grid-area: i; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  /* grid-template-areas: 'a i'; */
+  
+  }
+  
+
+
+  
