@@ -11,14 +11,18 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import Setting from './components/Setting/Setting';
 
-function App() {
+function App(props) {
+
+  
+
+
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
         <Header />
         <Navbar />
         <div className='app_wrapper_content'>
-          <Route path='/profile' component={Profile} />
+          <Route path='/profile' render={()=><Profile posts={props.posts}/>} />
           <Route path='/message' component={Dialog} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
@@ -27,6 +31,8 @@ function App() {
       </div>
     </BrowserRouter>
   );
+  
 }
+
 
 export default App;
