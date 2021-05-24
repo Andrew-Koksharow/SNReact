@@ -10,20 +10,18 @@ import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import Setting from './components/Setting/Setting';
+// import { addPost } from './redux/state';
 
 function App(props) {
-
-  
-
 
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
-        <Header />
-        <Navbar />
+        <div className='Header'><Header /></div>
+        <div className='nav'><Navbar /></div>
         <div className='app_wrapper_content'>
-          <Route path='/profile' render={()=><Profile posts={props.posts}/>} />
-          <Route path='/message' component={Dialog} />
+          <Route path='/profile' render={()=><Profile profile={props.state.profilePage} addPost={props.addPost}/>} />
+          <Route path='/message' render={()=><Dialog dialogs={props.state.dialogPage} />} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/setting' component={Setting} />

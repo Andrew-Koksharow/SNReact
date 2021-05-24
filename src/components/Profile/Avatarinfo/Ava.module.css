@@ -3,13 +3,14 @@
   }
 
 .avatar {
-  /* grid-area: a; */
+  border-style: solid;
+  height: 15em;  /* grid-area: a; */
 }
   
   .item {
     /* grid-area: i; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-size: 10px;
     margin-top: 20px;
     padding: 20px;
   }

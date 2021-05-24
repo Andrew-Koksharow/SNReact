@@ -2,40 +2,22 @@ import React from 'react'
 
 import s from './Dialog.module.css'
 import DialogItem from './DialogItem'
+import Message from './Message'
 
+const Dialog = (props) => {
 
-
-
-const Message = (props) => {
-    return (
-        <div className='s.dialog'>{props.message}</div>
-    )
-}
-
-
-const Dialog = () => {
-
-    let dialogsData = [
-        { id: 1, name: 'Andrew' },
-        { id: 2, name: 'Sveta' },
-        { id: 3, name: 'Julia' },
-        { id: 4, name: 'Pasha' },
-        { id: 5, name: 'Polina' },
-        { id: 6, name: 'Seva' },
-    ]
-
-    let dialogsElements = dialogsData.map(dialog =>  <DialogItem name={dialog.name} id={dialog.id}/>);
-
-    let messagesData = [
-        { id: 1, message: 'hello' },
-        { id: 2, message: 'how are you?' },
-        { id: 3, message: 'hi' },
-    ]
-
+ 
+    let dialogsElements = props.dialogs.dialogsData.map(dialog =>  <DialogItem name={dialog.name} id={dialog.id}/>);
 
     // Create a dialog based on array of data
-    let messagesElements = messagesData.map(m => <Message message={m.message} />);
+    let messagesElements = props.dialogs.messagesData.map(m => <Message message={m.message} />);
 
+let textMessage = React.createRef();
+
+let addMessage = () => {
+let text = textMessage.current.value;
+alert(text);
+}
 
     return (
         <div className={s.dialogs}>
@@ -44,6 +26,8 @@ const Dialog = () => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
+                <div> <textarea ref={textMessage}></textarea></div>
+                <div> <button onClick={ addMessage }></button></div>
             </div>
         </div>
     )
