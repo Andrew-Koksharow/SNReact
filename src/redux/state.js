@@ -6,7 +6,8 @@ let state = {
         posts: [
             { id: 1, message: 'Hello, it my first post', likesCount: 12 },
             { id: 2, message: 'yo', likesCount: 5 },
-               ]
+               ],
+        newPostText:'react-learn'
     },
     dialogPage: {
         dialogsData: [
@@ -26,10 +27,19 @@ let state = {
 }
 
 
-export let addPost = (postMessage) => {
+
+//create new Post. Assign in profilePage->newPostText -> text of <MyPost/> 
+
+export let createNewPostText = (newText) => {
+    
+    state.profilePage.newPostText = newText;
+    rerrenderEntireTree(state);
+}
+
+export let addPost = () => {
         let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);

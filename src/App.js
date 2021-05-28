@@ -13,14 +13,15 @@ import Setting from './components/Setting/Setting';
 // import { addPost } from './redux/state';
 
 function App(props) {
-
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
         <div className='Header'><Header /></div>
         <div className='nav'><Navbar /></div>
         <div className='app_wrapper_content'>
-          <Route path='/profile' render={()=><Profile profile={props.state.profilePage} addPost={props.addPost}/>} />
+          <Route path='/profile' render={()=><Profile profile={props.state.profilePage} 
+                                                      addPost={props.addPost}
+                                                      createNewPostText={props.createNewPostText}/>} />
           <Route path='/message' render={()=><Dialog dialogs={props.state.dialogPage} />} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
