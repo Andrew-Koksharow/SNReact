@@ -1,10 +1,20 @@
 import reportWebVitals from './reportWebVitals';
-import { rerrenderEntireTree } from './render';
-import state from './redux/state';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
 
 
-rerrenderEntireTree(state);
 
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 
 

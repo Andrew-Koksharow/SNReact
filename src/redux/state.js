@@ -1,51 +1,57 @@
-import { rerrenderEntireTree } from "../render";
+import dialogsReducer from "./dialog_reducer";
+import profileReducer from "./profile_reducer";
 
-let state = {
+let store = {
+    _state: {
 
-    profilePage: {
-        posts: [
-            { id: 1, message: 'Hello, it my first post', likesCount: 12 },
-            { id: 2, message: 'yo', likesCount: 5 },
-               ],
-        newPostText:'react-learn'
+        profilePage: {
+            posts: [
+                { id: 1, message: 'Hello, it my first post', likesCount: 12 },
+                { id: 2, message: 'yo', likesCount: 5 },
+            ], 
+            newPostText: 'react-learn'
+        },
+        dialogPage: {
+            dialogsData: [
+                { id: 1, name: 'Andrew' },
+                { id: 2, name: 'Sveta' },
+                { id: 3, name: 'Julia' },
+                { id: 4, name: 'Pasha' },
+                { id: 5, name: 'Polina' },
+                { id: 6, name: 'Seva' },
+            ],
+            messagesData: [
+                { id: 1, message: 'hello' },
+                { id: 2, message: 'how are you?' },
+                { id: 3, message: 'hi' },
+            ],
+            createNewMessagetext: 'm'
+        }
     },
-    dialogPage: {
-        dialogsData: [
-            { id: 1, name: 'Andrew' },
-            { id: 2, name: 'Sveta' },
-            { id: 3, name: 'Julia' },
-            { id: 4, name: 'Pasha' },
-            { id: 5, name: 'Polina' },
-            { id: 6, name: 'Seva' },
-        ],
-        messagesData: [
-            { id: 1, message: 'hello' },
-            { id: 2, message: 'how are you?' },
-            { id: 3, message: 'hi' },
-        ]
+    getState() {
+        return this._state;
+    },
+    _callsubscriber() {
+        console.log('aa');
+    },
+    // OBSERVER
+    subscribe(observer) {
+        this._callsubscriber = observer;
+    },
+
+      dispatch(action) {
+
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
+
+        this._callsubscriber(this._state);
+
+
     }
 }
 
 
 
-//create new Post. Assign in profilePage->newPostText -> text of <MyPost/> 
 
-export let createNewPostText = (newText) => {
-    
-    state.profilePage.newPostText = newText;
-    rerrenderEntireTree(state);
-}
-
-export let addPost = () => {
-        let newPost = {
-        id: 5,
-        message: state.profilePage.newPostText,
-        likesCount: 0
-    };
-    state.profilePage.posts.push(newPost);
-    rerrenderEntireTree(state);
-}
-
-
-
-export default state;
+export default store;

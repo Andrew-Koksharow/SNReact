@@ -2,6 +2,8 @@ import React from 'react';
 import s from './MyPost.module.css';
 import Post from './Post/Post'
 
+
+
 const MyPost = (props) => {
 
 let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
@@ -11,13 +13,11 @@ let newPostElement = React.createRef();
 
 let postAdd = () => {
   props.addPost();
-  props.createNewPostText('');
 }
 
 let onPostChange = () => {
   let text = newPostElement.current.value;
-  
-  props.createNewPostText(text);
+  props.updateNewPostText(text);
 }
 
   return (
