@@ -1,5 +1,4 @@
 import React from 'react';
-import store from '../../redux/state';
 
 import AvatarInfo from './Avatarinfo/AvatarInfo';
 import MyPostContainer from './MyPost/MyPostContainer';
@@ -11,8 +10,8 @@ const Profile = (props) => {
  
   return (
     <div>
-      <AvatarInfo />
-      <MyPostContainer store={props.state}/>
+      <AvatarInfo profile={props.profile}/>
+      <MyPostContainer/>
     </div>)
 }
 

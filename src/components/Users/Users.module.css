@@ -3,3 +3,7 @@
     height: 50px;
     border-radius: 3px;
 }
+
+.activePage {
+font-weight: bold;
+}

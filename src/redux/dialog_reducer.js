@@ -29,13 +29,13 @@ case CREATE_NEW_MESSAGE_TEXT: {
   return stateCopy;
 }
   case MESSAGE_ADD: {
-    let body = stateCopy.createNewMessagetext;
-    let stateCopy = {...state,
-       createNewMessagetext:'',
-      messagesData:[...state.messagesData, {id: 6, message: body}]};
+    // let body = stateCopy.createNewMessagetext  ;
+    let stateCopy = {...state,createNewMessagetext:'',
+      messagesData:[...state.messagesData, {id: 6, message: state.createNewMessagetext}]};
     stateCopy.messagesData = [...state.messagesData];
     
-    stateCopy.messagesData.push({id: 6, message: body});
+    
+    stateCopy.messagesData.push({id: 6, message: state.createNewMessagetext});
     stateCopy.createNewMessagetext = '';
     return stateCopy;
   }
