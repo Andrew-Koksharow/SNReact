@@ -4,6 +4,7 @@ import { follow, getUsersThunkCreator, toggleFollowingInProgress,
      setCurrentPage, setTotalCount, unfollow } from '../../redux/users_reducer';
 import Users from './Users';
 import Preloader from '../Common/Preloader';
+import { getCurrentPage, getPageSize, getStatusFollInProgress, getStatusIsFetching, getTotalCount, getUsersSuper } from '../../redux/Users-selectors';
 
 class UsersAPIComponent extends React.Component {
     
@@ -47,17 +48,29 @@ class UsersAPIComponent extends React.Component {
     }
 
 
+// let mapStatetoProps = (state) => {
+    
+// return {
+//     users: state.usersPage.users,
+//     pageSize: state.usersPage.pageSize,
+//     currentPage: state.usersPage.currentPage,
+//     totalCount: state.usersPage.totalCount,
+//     isFetching: state.usersPage.isFetching,
+//     followingInProgress: state.usersPage.followingInProgress
+// }
+// }
+
 let mapStatetoProps = (state) => {
     
-return {
-    users: state.usersPage.users,
-    pageSize: state.usersPage.pageSize,
-    currentPage: state.usersPage.currentPage,
-    totalCount: state.usersPage.totalCount,
-    isFetching: state.usersPage.isFetching,
-    followingInProgress: state.usersPage.followingInProgress
-}
-}
+    return {
+        users: getUsersSuper(state),
+        pageSize: getPageSize(state),
+        currentPage: getCurrentPage(state),
+        totalCount: getTotalCount(state),
+        isFetching: getStatusIsFetching(state),
+        followingInProgress: getStatusFollInProgress(state)
+    }
+    }
 
 
 const UsersContainer =  connect(mapStatetoProps, {follow, unfollow, setCurrentPage, 

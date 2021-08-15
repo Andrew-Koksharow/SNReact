@@ -1,10 +1,10 @@
-import React from 'react'
-import s from './Dialog.module.css'
-import DialogItem from './DialogItem'
-import Message from './Message'
+import React from 'react';
+import s from './Dialog.module.css';
+import DialogItem from './DialogItem';
+import Message from './Message';
 
 const Dialog = (props) => {
-debugger
+
     let dialogsElements = props.dialogsData.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
 
     // Create a dialog based on array of data
@@ -19,6 +19,8 @@ debugger
         props.MessageText(text);
 
     }
+
+    
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>

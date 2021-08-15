@@ -4,6 +4,8 @@
 
 .avatar {
   border-style: solid;
+  width: 150px;
+  height: 200px;
   /* grid-area: a; */
 }
   
