@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/training_project/static/css/main.33d1cc45.chunk.css",
-    "main.js": "/training_project/static/js/main.479bf48e.chunk.js",
-    "main.js.map": "/training_project/static/js/main.479bf48e.chunk.js.map",
-    "runtime-main.js": "/training_project/static/js/runtime-main.7f46903c.js",
-    "runtime-main.js.map": "/training_project/static/js/runtime-main.7f46903c.js.map",
-    "static/js/2.8f637f06.chunk.js": "/training_project/static/js/2.8f637f06.chunk.js",
-    "static/js/2.8f637f06.chunk.js.map": "/training_project/static/js/2.8f637f06.chunk.js.map",
-    "static/js/3.faf27fb8.chunk.js": "/training_project/static/js/3.faf27fb8.chunk.js",
-    "static/js/3.faf27fb8.chunk.js.map": "/training_project/static/js/3.faf27fb8.chunk.js.map",
-    "index.html": "/training_project/index.html",
-    "static/css/main.33d1cc45.chunk.css.map": "/training_project/static/css/main.33d1cc45.chunk.css.map",
-    "static/js/2.8f637f06.chunk.js.LICENSE.txt": "/training_project/static/js/2.8f637f06.chunk.js.LICENSE.txt",
-    "static/media/loader.14d0199a.svg": "/training_project/static/media/loader.14d0199a.svg",
-    "static/media/user_avatar.329f5d2d.png": "/training_project/static/media/user_avatar.329f5d2d.png"
+    "main.css": "/SNReact/static/css/main.33d1cc45.chunk.css",
+    "main.js": "/SNReact/static/js/main.479bf48e.chunk.js",
+    "main.js.map": "/SNReact/static/js/main.479bf48e.chunk.js.map",
+    "runtime-main.js": "/SNReact/static/js/runtime-main.a3457f54.js",
+    "runtime-main.js.map": "/SNReact/static/js/runtime-main.a3457f54.js.map",
+    "static/js/2.8f637f06.chunk.js": "/SNReact/static/js/2.8f637f06.chunk.js",
+    "static/js/2.8f637f06.chunk.js.map": "/SNReact/static/js/2.8f637f06.chunk.js.map",
+    "static/js/3.faf27fb8.chunk.js": "/SNReact/static/js/3.faf27fb8.chunk.js",
+    "static/js/3.faf27fb8.chunk.js.map": "/SNReact/static/js/3.faf27fb8.chunk.js.map",
+    "index.html": "/SNReact/index.html",
+    "static/css/main.33d1cc45.chunk.css.map": "/SNReact/static/css/main.33d1cc45.chunk.css.map",
+    "static/js/2.8f637f06.chunk.js.LICENSE.txt": "/SNReact/static/js/2.8f637f06.chunk.js.LICENSE.txt",
+    "static/media/loader.14d0199a.svg": "/SNReact/static/media/loader.14d0199a.svg",
+    "static/media/user_avatar.329f5d2d.png": "/SNReact/static/media/user_avatar.329f5d2d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7f46903c.js",
+    "static/js/runtime-main.a3457f54.js",
     "static/js/2.8f637f06.chunk.js",
     "static/css/main.33d1cc45.chunk.css",
     "static/js/main.479bf48e.chunk.js"
