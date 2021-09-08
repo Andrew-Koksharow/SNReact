@@ -3,11 +3,11 @@ let ADD_POST = 'ADD-POST';
 let CREATE_NEW_POST_TEXT = 'CREATE-NEW-POST-TEXT';
 let SET_USERS_PROFILE = 'SET_USERS_PROFILE';
 let SET_STATUS = 'SET_STATUS';
-let GET_STATUS = 'GET_STATUS';
+let SAVE_PHOTO_SUCCES='SAVE_PHOTO_SUCCES';
 
 let initialState = {
   posts: [
-    { id: 1, message: 'Hello, it my first post', likesCount: 12 },
+    { id: 1, message: "Hello, it's test post/", likesCount: 100 },
     { id: 2, message: 'yo', likesCount: 5 },
   ],
   newPostText: 'react',
@@ -42,6 +42,9 @@ return {...state, profile: action.profile}
     }
     case SET_STATUS: {
       return {...state, status: action.status}
+    }
+    case SAVE_PHOTO_SUCCES: {
+      return {...state, profile: {...state.profile, photos: action.photos}}
     }
 
     default:
@@ -78,6 +81,13 @@ export const setStatus = (status) => {
   }
 }
 
+export const savePhotoSucces = (photos) => {
+  return {
+    type: SAVE_PHOTO_SUCCES,
+    photos
+  }
+}
+
 export const getStatus = (userId) => (dispatch) =>{
   profileAPI.getStatus(userId).then(response => {
     dispatch(setStatus(response.data))
@@ -90,6 +100,13 @@ export const updateStatus = (status) => (dispatch) =>{
     dispatch(setStatus(status))
     }
   })
+}
+
+export const savePhoto = (file) => async (dispatch) =>{
+   let response = await profileAPI.savePhoto(file);
+   if (response.data.resultCode === 0) {
+    dispatch(savePhotoSucces(response.data.data.photos))
+    }
 }
 
 

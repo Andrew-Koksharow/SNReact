@@ -1,12 +1,17 @@
 import React from 'react';
 import s from './Ava.module.css';
 import Preloader from '../../Common/Preloader';
-import ProfileStatus from '../ProfileStatus'
 import ProfileStatusWithHooks from '../ProfileStatusWithHooks';
-
+import userPhoto from '../../../assets/user_avatar.png';
 const AvatarInfo = (props) => {
 if (!props.profile) {
   return  <Preloader/>
+}
+
+const onMainPhotoSelected = e => {
+  if (e.target.files.length) {
+props.savePhoto(e.target.files[0])
+  }
 }
 
 
@@ -14,7 +19,8 @@ if (!props.profile) {
     <div className={s.description}>
       
       <div className={s.avatar}>
-       <img src={props.profile.photos.large}></img>
+       <img src={props.profile.photos.large || userPhoto}></img>
+       {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
         </div>
         <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/> 
       <div className={s.item}>

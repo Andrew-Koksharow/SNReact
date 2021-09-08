@@ -8,11 +8,8 @@ state = {
     status: this.props.status
 }
 
-    
-
-
 activateMode = () => { 
-    debugger
+    
     this.setState({
         editMode: true
     })
