@@ -22,8 +22,8 @@ let onPostChange = () => {
 
   return (
     <div className={s.content}>
-      <div className={s.h}>My posts</div>
-      <div> <textarea onChange={onPostChange} className={s.item} ref={newPostElement} value={props.newPostText}/></div>
+      
+      <div> <input onChange={onPostChange} className={s.item} ref={newPostElement} value={props.newPostText}/></div>
       <div> <button onClick={postAdd}>Create post</button></div>
       <div>{postsElements}</div>
     </div>)

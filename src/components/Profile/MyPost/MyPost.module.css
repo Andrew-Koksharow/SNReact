@@ -1,23 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
 
 
 .item {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 20px;
-  margin-top: 20px;
-  width: 50em;
+  /* margin-top: 20px;
+  width: 50em; */
 }
 
 .content {
-  margin-top: 30px;
-  margin-left: 0px;
-  margin-right: 20px;
-  width: 70em;
-  border-style: solid;
+    /* margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 20px; */
+  
+  background-color: rgb(217, 217, 255);
 }
 
-.h {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-top: 20px;
-  text-align: center;
-}

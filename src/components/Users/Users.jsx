@@ -9,14 +9,15 @@ let Users = (props) => {
 
 
     return <div>
-<Paginator totalCount={props.totalCount} pageSize={props.pageSize} 
-onPageChanged={props.onPageChanged} currentPage={props.currentPage}/>
-     
 
+Users   
         {
             props.users.map(u =>
                 <div key={u.id}>
                     <span>
+                        <div>
+                            {u.name}
+                        </div>
                         {<div>
                             <NavLink to={'/profile/' + u.id}>
                                 <img src={u.photos.small != null ? u.photos.small : user_avatar} className={s.avatar} />
@@ -37,19 +38,22 @@ onPageChanged={props.onPageChanged} currentPage={props.currentPage}/>
 
                         </div>
                     </span>
-                    <span>
-                        <div>{u.name}</div>
-                        <div>{u.status}</div>
-                    </span>
+
                     {/* <span>
                             <div>{u.location.country}</div>
                             <div>{u.location.city}</div>
                         </span>  */}
 
+
                 </div>
+
             )
 
         }
+
+        <Paginator totalCount={props.totalCount} pageSize={props.pageSize}
+            onPageChanged={props.onPageChanged} currentPage={props.currentPage} />
+
     </div>
 }
 

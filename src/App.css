@@ -1,24 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Inconsolata:wght@200&family=Oswald:wght@300;400&display=swap");
+
+
 .app_wrapper {
   display: grid;
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: 70px 8fr;
   grid-template-columns: 2fr 10fr;
-  grid-template-areas: 
-  'h h'
-  'n c';
-  
+  grid-template-areas:
+    "h h"
+    "n c";
+  font-family: "Arvo", serif;
+
+  font-family: "Inconsolata", monospace;
+
+  font-family: "Oswald", sans-serif;
 }
 
 .app_wrapper_content {
   grid-area: c;
-  }
+  margin: 0.2em;
+  background-color: rgb(231, 237, 253);
+}
 
 .Header {
-    grid-area: h;
-    background-color: black;
-    }
+  grid-area: h;
+  background-color: rgb(231, 237, 253);
+  opacity: 20;
+  border-radius: 5px;
+  margin: 0.2em;
+}
 
 .nav {
-      grid-area: n;
-      padding: 20px;
-      line-height: 1,5;
-      }
+  grid-area: n;
+  
+  background-color: rgb(231, 237, 253);
+  max-width: 12em;
+  text-align:center;
+  height: 300px;
+}

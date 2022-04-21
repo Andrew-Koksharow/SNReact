@@ -7,7 +7,7 @@ import Preloader from './components/Common/Preloader';
 import DialogContainer from './components/Dialogs/DialogContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
-import Music from './components/Music/Music';
+
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Setting from './components/Setting/Setting';
@@ -33,7 +33,7 @@ componentDidMount() {
           <Route path='/profile/:UserId?' render={() => <ProfileContainer />} />
           <Route path='/message' render={() => <DialogContainer />} />
           <Route path='/users' render={ ()=> <UsersContainer/>} />
-          <Route path='/music' component={Music} />
+   
           <Route path='/setting' component={Setting} />
           <Route path='/login' render={ ()=> <Login/>} />
         </div>

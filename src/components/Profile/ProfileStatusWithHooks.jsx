@@ -27,6 +27,7 @@ const onStatusChange = (e) => {
         <div >
             {!editMode &&
                 <div>
+                    
                     <span onDoubleClick={activateEditMode}>{props.status || 'Enter new status'}</span>
                     </div>
             }
@@ -35,7 +36,10 @@ const onStatusChange = (e) => {
                 <div><input autoFocus={true} onBlur={deactivateEditMode} onChange={onStatusChange} value={status}/> </div>
             }
 
-        </div>)
+        </div>
+        
+        )
+        
 }
 
 
