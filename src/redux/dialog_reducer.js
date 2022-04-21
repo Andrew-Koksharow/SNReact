@@ -12,11 +12,9 @@ let initialState = {
       { id: 6, name: 'Seva' },
   ],
   messagesData: [
-      { id: 1, message: 'hello' },
-      { id: 2, message: 'how are you?' },
-      { id: 3, message: 'hi' },
+      
   ],
-  createNewMessagetext: 'm'
+  createNewMessagetext: ''
 }
 
 
@@ -36,7 +34,7 @@ case CREATE_NEW_MESSAGE_TEXT: {
     
     
     stateCopy.messagesData.push({id: 6, message: state.createNewMessagetext});
-    stateCopy.createNewMessagetext = '';
+    stateCopy.createNewMessagetext = 'saasas';
     return stateCopy;
   }
     default: 
