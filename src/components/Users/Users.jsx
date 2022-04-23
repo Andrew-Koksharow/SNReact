@@ -9,14 +9,21 @@ let Users = (props) => {
 
 
     return <div>
+<div className={s.h2}>
+Users
+</div>   
 
-Users   
+<div className={s.users}>
         {
+            
             props.users.map(u =>
+                
                 <div key={u.id}>
-                    <span>
+                    
+                    <span className={s.item}>
+                        
                         <div>
-                            {u.name}
+                            {u.name} <b>{u.status}</b>
                         </div>
                         {<div>
                             <NavLink to={'/profile/' + u.id}>
@@ -50,6 +57,7 @@ Users
             )
 
         }
+        </div>
 
         <Paginator totalCount={props.totalCount} pageSize={props.pageSize}
             onPageChanged={props.onPageChanged} currentPage={props.currentPage} />

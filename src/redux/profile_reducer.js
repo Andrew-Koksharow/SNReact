@@ -117,6 +117,15 @@ export const getUsersProfile = (userId) => (dispatch) => {
   })
 }
 
+export const saveProfile = (profileObject) => async (dispatch) => {
+  
+  let response = await profileAPI.saveProfile(profileObject);
+  if (response.resultCode === 0) {
+  // dispatch(savePhotoSucces(response.data.data.photos))
+   }
+}
+
+// saveProfile
 
 //old
   // if (action.type === 'ADD-POST') {

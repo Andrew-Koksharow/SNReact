@@ -1,11 +1,26 @@
+  .Header {
+    display: grid;
+    grid-template-areas: 'I T L';
+    grid-template-columns: 50px 1fr 5fr;
+  }
+  
   .headIcon {
-    margin: 10px;
+    grid-area: 'I';
+    
     height: 50px;
     width: 50px;
   }
   
+.headTitle {
+  grid-area: 'T';
+  font-size: large;
+   grid-column: 2/2;
+   
+}
+
 .loginBlock {
-  float: right;
+  grid-area: 'L';
+  text-align: end;
   color: white;
   text-decoration: none;
 }

@@ -3,7 +3,7 @@
 
 .app_wrapper {
   display: grid;
-  grid-template-rows: 70px 8fr;
+  grid-template-rows: 70px minmax(40em, 20fr);
   grid-template-columns: 2fr 10fr;
   grid-template-areas:
     "h h"
@@ -17,8 +17,7 @@
 
 .app_wrapper_content {
   grid-area: c;
-  margin: 0.2em;
-  background-color: rgb(231, 237, 253);
+    background-color: rgb(231, 237, 253);
 }
 
 .Header {
@@ -26,14 +25,15 @@
   background-color: rgb(231, 237, 253);
   opacity: 20;
   border-radius: 5px;
-  margin: 0.2em;
+  margin-bottom: 2px;
+  
 }
 
 .nav {
   grid-area: n;
   
   background-color: rgb(231, 237, 253);
-  max-width: 12em;
+  
   text-align:center;
-  height: 300px;
+  
 }

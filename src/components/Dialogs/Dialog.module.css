@@ -7,6 +7,11 @@ grid-template-columns: 2fr 10fr;
 
 .dialogsItems {
 padding: 20px;
-background-color: cadetblue;
+background-color: rgb(217, 249, 250);
+
 }
 
+.dialog {
+    text-decoration: none;
+    font-size:large;
+}

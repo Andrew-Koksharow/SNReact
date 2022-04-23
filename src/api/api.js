@@ -55,7 +55,11 @@ savePhoto(photoFile) {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
-    })}
+    })},
+    saveProfile(profileObject) {
+        
+        return instance.put(`profile`, profileObject)
+    }
  
 }
     

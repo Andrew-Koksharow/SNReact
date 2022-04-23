@@ -7,9 +7,12 @@
   }
 
 .avatar {
+  
+  margin-left: auto;
+  margin-right: auto;
     width: 150px;
   height: 200px;
-  margin: 10px;
+  
   /* grid-area: a; */
 }
   
@@ -24,13 +27,14 @@
 .description {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 2fr 2fr;
+  grid-template-rows: 2fr 0.5fr;
   /* grid-template-areas: 'a i'; */
   
   }
 
    .information {
     background-color: white;
+    width: 200px;
   } 
   
 

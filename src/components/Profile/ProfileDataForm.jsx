@@ -4,57 +4,71 @@ import { Field, Form, Formik, ErrorMessage } from 'formik';
 
 
 const ProfileDataForm = (props) => {
- 
-
-    return <div>
-<Formik
 
 
-initialValues={{ 
-    fullName: '', 
-    lookingForAJob: false,
-     Contacts: {'github': '',
-    'vk': '',
-    'facebook': '',
-    'instagram': '',
-    'twitter': '',
-    'website': '',
-    'youtube': '',
-    'mainLink': ''},
-     aboutMe: ''}}
-onSubmit={(values, { setSubmitting }) => {
-         
-    //let logObj = JSON.stringify(values, null, 2)
-    //alert(values.email)
-      alert(values.fullName);
-      
-    setSubmitting(false)
-    
-  }}
-  
->
+  return <div>
+    <Formik
 
-{({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty, offEditMode}) => (
-   <Form>
-   <div><Field type="text" name="fullName" placeholder='Enter you fullname'/>
- <ErrorMessage name="email" component="div" /></div>
- <div><Field type="checkbox" name="lookingForAJob"/>lookingForAJob</div>
- <div><Field type="text" name="Contacts" /></div>
- <div><Field type="text" name="aboutMe" placeholder='About you'/></div>
- <div><button type="submit" disabled={handleSubmit} onClick={() => {
-    props.offEditMode();
-  }}>
-   Save
- </button></div>
- 
-</Form>
- 
- )}  
-    
- 
-</Formik>
-      </div>
-  }
+
+      initialValues={{
+        userId: 0,
+        lookingForAJob: false,
+        lookingForAJobDescription: '',
+        fullName: '',
+        contacts: {
+          github: '',
+          vk: '',
+          facebook: '',
+          instagram: '',
+          twitter: '',
+          website: '',
+          youtube: '',
+          mainLink: ''
+        }
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+
+        //let logObj = JSON.stringify(values, null, 2)
+
+        props.offEditMode();
+        props.saveProfile(values);
+        setSubmitting(false)
+
+      }}
+
+    >
+
+      {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty, offEditMode }) => (
+        <Form>
+          <div><Field type="text" name="fullName" placeholder='Enter you fullname' /></div>
+          <div><Field type="checkbox" name="lookingForAJob" />lookingForAJob</div>
+          <div><Field type="text" name="lookingForAJobDescription" placeholder='Descriprtionof Job' /></div>
+          <div>контакты
+            <Field type="text" name="contacts.github" />
+            <Field type="text" name="contacts.vk" />
+            <Field type="text" name="contacts.facebook" />
+            <Field type="text" name="contacts.instagram" />
+            <Field type="text" name="contacts.twitter" />
+            <Field type="text" name="contacts.website" />
+            <Field type="text" name="contacts.youtube" />
+            <Field type="text" name="contacts.mainLink" />
+          </div>
+
+
+          <div><button type="submit" disabled={handleSubmit} onClick={() => {
+            props.offEditMode()
+          }}>
+            Save
+          </button></div>
+
+        </Form>
+
+      )}
+
+
+    </Formik>
+  </div>
+}
 //touched - показывает, взаимодействовали ли мы с полем ранее
 //handleChange - вызывается каждый раз, когда мы меняем значение формы
 //handleBlur - вызывается каждый раз, когда мы уходим с какого-то поля
@@ -62,4 +76,4 @@ onSubmit={(values, { setSubmitting }) => {
 // handleSubmit - привязан к кнопке отправки формы и он будет вызывать функцию onSubmit
 //dirty - он говорит нам, изменялись ли когда-либо значения в форме
 
-  export default ProfileDataForm
+export default ProfileDataForm
