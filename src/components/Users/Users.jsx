@@ -3,6 +3,7 @@ import user_avatar from '../../assets/user_avatar.png';
 import s from './Users.module.css';
 import { NavLink } from 'react-router-dom';
 import Paginator from './Paginator';
+import Button from '../Common/Button';
 
 
 let Users = (props) => {
@@ -34,8 +35,10 @@ Users
                             {u.followed ? <button disabled={props.followingInProgress.some(id => id === u.id)}
                                 onClick={() => {
                                     props.unfollow(u.id)
-
-                                }}>unfollow</button>
+                                }
+                                }
+                                name={'unfollow'}
+                            >unfollow</button>
 
                                 : <button disabled={props.followingInProgress.some(id => id === u.id)}
                                     onClick={() => {

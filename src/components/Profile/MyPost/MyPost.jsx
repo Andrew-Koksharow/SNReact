@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../Common/Button';
 import s from './MyPost.module.css';
 import Post from './Post/Post'
 
@@ -24,7 +25,7 @@ let onPostChange = () => {
     <div className={s.content}>
       
       <div> <input onChange={onPostChange} className={s.item} ref={newPostElement} value={props.newPostText}/></div>
-      <div> <button onClick={postAdd}>Create post</button></div>
+      <div> <Button onClick={postAdd} name={'Create post'}/></div>
       <div>{postsElements}</div>
     </div>)
 }
