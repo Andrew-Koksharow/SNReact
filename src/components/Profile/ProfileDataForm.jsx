@@ -9,7 +9,6 @@ const ProfileDataForm = (props) => {
   return <div>
     <Formik
 
-
       initialValues={{
         userId: 0,
         lookingForAJob: false,
@@ -29,7 +28,6 @@ const ProfileDataForm = (props) => {
       onSubmit={(values, { setSubmitting }) => {
 
         //let logObj = JSON.stringify(values, null, 2)
-
         props.offEditMode();
         props.saveProfile(values);
         setSubmitting(false)
@@ -44,9 +42,9 @@ const ProfileDataForm = (props) => {
           <div><Field type="checkbox" name="lookingForAJob" />lookingForAJob</div>
           <div><Field type="text" name="lookingForAJobDescription" placeholder='Descriprtionof Job' /></div>
           <div>контакты
-            <Field type="text" name="contacts.github" />
-            <Field type="text" name="contacts.vk" />
-            <Field type="text" name="contacts.facebook" />
+            <Field type="text" name="contacts.github" placeholder='github'/>
+            <Field type="text" name="contacts.vk" placeholder='vk'/>
+            <Field type="text" name="contacts.facebook" placeholder='facebook'/>
             <Field type="text" name="contacts.instagram" />
             <Field type="text" name="contacts.twitter" />
             <Field type="text" name="contacts.website" />

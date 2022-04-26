@@ -6,10 +6,10 @@ import ProfileStatusWithHooks from '../ProfileStatusWithHooks';
 import ProfileDataBlock from '../ProfileDataBlock';
 import userPhoto from '../../../assets/user_avatar.png';
 const AvatarInfo = (props) => {
- 
- //debugger
- let [editMode, setEditMode] = useState(false);
- 
+
+  //debugger
+  let [editMode, setEditMode] = useState(false);
+
 
   if (!props.profile) {
     return <Preloader />
@@ -20,10 +20,10 @@ const AvatarInfo = (props) => {
       props.savePhoto(e.target.files[0])
     }
   }
-const onloadInfromationAboutProfile = (objectInformation) => {
-  props.saveProfile(objectInformation);
-    
-}
+  const onloadInfromationAboutProfile = (objectInformation) => {
+    props.saveProfile(objectInformation);
+
+  }
 
   return (
     <div className={s.description}>
@@ -33,27 +33,28 @@ const onloadInfromationAboutProfile = (objectInformation) => {
         {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} placeholder={"Enter you photo"} />}
       </div>
       <div className={s.information}>
-      <div>
-        {props.profile.fullName}
-      
-      <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
-      
-      <div className={s.link}>
-      {editMode? <ProfileDataForm offEditMode={()=>{setEditMode(false)}} saveProfile={((objectinformation)=> {onloadInfromationAboutProfile(objectinformation)})}/> :
-      
-      <ProfileDataBlock profile={props.profile} isOwner={props.isOwner} 
-      goToEditMode={()=> {setEditMode(true)}} />}
-    </div>
-</div>
-</div>
-    </div>)}
+
+        <div className={s.fullName}> {props.profile.fullName} </div>
+
+        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+
+        <div className={s.link}>
+          {editMode ? <ProfileDataForm offEditMode={() => { setEditMode(false) }} saveProfile={((objectinformation) => { onloadInfromationAboutProfile(objectinformation) })} /> :
+
+            <ProfileDataBlock profile={props.profile} isOwner={props.isOwner}
+              goToEditMode={() => { setEditMode(true) }} />}
+        </div>
+
+      </div>
+    </div>)
+}
 
 
-export const Contact = ({contactTitle},{contactValue}) => {
+export const Contact = ({ contactTitle }, { contactValue }) => {
   return (
-  <div>
-    <b>{contactTitle} : </b> {contactValue}
-  </div>)
-} 
+    <div>
+      <b>{contactTitle} : </b> {contactValue}
+    </div>)
+}
 
 export default AvatarInfo;

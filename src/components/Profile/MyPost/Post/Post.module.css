@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
+
 .item {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 20px;
   margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.likesCount {
+  display: block;
+  
 }
 

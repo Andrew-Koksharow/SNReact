@@ -25,6 +25,7 @@ const LoginForm = (props) => {
          
          //let logObj = JSON.stringify(values, null, 2)
          //alert(values.email)
+         
            props.login(values.email, values.password, values.rememberMe);
            
          setSubmitting(false)
@@ -34,7 +35,7 @@ const LoginForm = (props) => {
        {({ isSubmitting }) => (
          <Form>
              <div><Field type="text" name="email" placeholder='Enter you login'/>
-           <ErrorMessage name="email" component="div" /></div>
+           </div>
            <div><Field type="password" name="password" />
            <ErrorMessage name="password" component="div" /></div>
            <div><Field type="checkbox" name="rememberMe" />Remember me</div>

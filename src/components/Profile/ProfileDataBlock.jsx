@@ -11,7 +11,8 @@ const ProfileDataBlock = (props) => {
 
 
         <div>job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
-        <Button onClick={()=>showContact(true)} name={'contact'}/>
+
+       {!displayContact && <Button onClick={()=>showContact(true)} name={'contact'}/> }
 
         <div>
 
@@ -26,7 +27,7 @@ const ProfileDataBlock = (props) => {
             })
        
        }
-       {  displayContact &&   <button onClick={()=>showContact(false)}></button> }
+       {  displayContact &&   <Button onClick={()=>showContact(false)} name={'hide'}/> }
 
 
             {props.isOwner ? <div><button onClick={props.goToEditMode}>Изменить информацию</button></div>: <div></div>}

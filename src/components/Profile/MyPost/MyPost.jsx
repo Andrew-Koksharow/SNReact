@@ -24,9 +24,11 @@ let onPostChange = () => {
   return (
     <div className={s.content}>
       
-      <div> <input onChange={onPostChange} className={s.item} ref={newPostElement} value={props.newPostText}/></div>
-      <div> <Button onClick={postAdd} name={'Create post'}/></div>
-      <div>{postsElements}</div>
+       <input onChange={onPostChange} className={s.item} 
+       ref={newPostElement} value={props.newPostText}/>
+
+       <Button onClick={postAdd} name={'Create post'} className={s.button}/>
+      <div className={s.posts}>{postsElements}</div>
     </div>)
 }
 
