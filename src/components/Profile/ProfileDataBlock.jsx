@@ -10,7 +10,7 @@ const ProfileDataBlock = (props) => {
     return <div className={s.item}>
 
 
-        <div>job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+        <div> looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
 
        {!displayContact && <Button onClick={()=>showContact(true)} name={'contact'}/> }
 
@@ -30,7 +30,7 @@ const ProfileDataBlock = (props) => {
        {  displayContact &&   <Button onClick={()=>showContact(false)} name={'hide'}/> }
 
 
-            {props.isOwner ? <div><button onClick={props.goToEditMode}>Изменить информацию</button></div>: <div></div>}
+            {props.isOwner ? <div><Button onClick={props.goToEditMode} name={'Изменить информацию'}/></div>: <div></div>}
         </div>
 
     </div>

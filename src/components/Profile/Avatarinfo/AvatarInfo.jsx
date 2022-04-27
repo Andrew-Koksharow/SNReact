@@ -20,6 +20,7 @@ const AvatarInfo = (props) => {
       props.savePhoto(e.target.files[0])
     }
   }
+
   const onloadInfromationAboutProfile = (objectInformation) => {
     props.saveProfile(objectInformation);
 
@@ -30,7 +31,7 @@ const AvatarInfo = (props) => {
 
       <div className={s.avatar}>
         <img src={props.profile.photos.large || userPhoto}></img>
-        {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} placeholder={"Enter you photo"} />}
+        {props.isOwner && !props.profile.photos.large ? <input type={"file"} onChange={onMainPhotoSelected} title={"Enter you photo"} />:<div></div>}
       </div>
       <div className={s.information}>
 

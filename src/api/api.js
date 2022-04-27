@@ -57,7 +57,7 @@ savePhoto(photoFile) {
         }
     })},
     saveProfile(profileObject) {
-        
+        console.log(profileObject)
         return instance.put(`profile`, profileObject)
     }
  

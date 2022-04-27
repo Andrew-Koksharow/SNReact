@@ -118,7 +118,7 @@ export const getUsersProfile = (userId) => (dispatch) => {
 }
 
 export const saveProfile = (profileObject) => async (dispatch) => {
-  
+  debugger
   let response = await profileAPI.saveProfile(profileObject);
   if (response.resultCode === 0) {
   // dispatch(savePhotoSucces(response.data.data.photos))

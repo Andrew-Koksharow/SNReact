@@ -18,20 +18,23 @@
 .app_wrapper_content {
   grid-area: c;
     background-color: rgb(245, 247, 255);
+    height: 100vh;
 }
 
 .Header {
   grid-area: h;
   background-color: rgb(231, 237, 253);
-  opacity: 20;
+  opacity: 10;
   border-radius: 5px;
   margin-bottom: 2px;
+  width: 99vw;
+  
   
 }
 
 .nav {
   grid-area: n;
-  
+  height: 100vh;
   background-color: rgb(231, 237, 253);
   
   text-align:center;

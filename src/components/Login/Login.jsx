@@ -8,6 +8,7 @@ const LoginForm = (props) => {
     return (
         <div>
             <h2>login</h2>
+            <div>You must be logged in to see messages.</div>
         <Formik
        initialValues={{ email: '', password: '', rememberMe: false}}
     //    validate={values => {

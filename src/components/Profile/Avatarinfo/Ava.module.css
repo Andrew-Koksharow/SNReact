@@ -24,14 +24,13 @@
     /* grid-area: i; */
     font-family:'Kanit', sans-serif;
     font-size: 30px;
-        
-    
+          
   }
 
 .description {
   display: grid;
-  grid-template-areas: 'a a i';
-  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 'a i i';
+  grid-template-columns: minmax(1fr, 4fr);
   grid-template-rows: minmax(300px, 1fr);
   /*grid-template-columns: 1fr 3fr;
   /*grid-template-rows: 2fr 0.5fr;
@@ -41,7 +40,7 @@
 
    .information {
     font-family:'Kanit', sans-serif;
-    grid-area: 'i';
+    grid-area: i;
     font-size: large;
 
   } 
@@ -55,9 +54,8 @@
   
 .avatar {
     
-  grid-area: 'a';
+  grid-area: a;
   
-  background-color: rgb(255, 255, 255);
 
 }
 

@@ -4,11 +4,20 @@
   font-family: 'Kanit', sans-serif;
   font-size: 20px;
   margin-top: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(237, 230, 253);
 }
 
 .likesCount {
+  width: 30px;
+  background-color: rgb(208, 232, 255);
   display: block;
   
 }
+
+.post {
+  margin-top: 1em;
+  border: 1px solid;
+}
+
+
 

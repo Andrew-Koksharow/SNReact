@@ -1,25 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
 
 .content {
+  margin-top: 1em;
+  
   display: grid;
   grid-template-columns: 4fr 1fr;
-background-color: rgb(245, 253, 255);
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-areas: 'i b'
+  'p p';
 
 }
 
 .item {
   font-family: 'Kanit', sans-serif;
   font-size: 20px;
-  grid-area: 'i';
+  grid-area: i;
   grid-column: 1/2;
 }
 
 .button {
-  grid-area: 'b';
+  grid-area: b;
   grid-column: 2/3;
 }
 
 .posts {
-  grid-area: 'p';
+  grid-area: p;
+  background-color: rgb(255, 255, 255);
 }
 
