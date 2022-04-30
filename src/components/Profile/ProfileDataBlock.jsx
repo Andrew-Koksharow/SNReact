@@ -12,25 +12,27 @@ const ProfileDataBlock = (props) => {
 
         <div> looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
 
-       {!displayContact && <Button onClick={()=>showContact(true)} name={'contact'}/> }
+        {!displayContact && <Button onClick={() => showContact(true)} name={'contact'} />}
 
         <div>
 
-            { 
-            
-            displayContact &&
-           
-            Object.keys(props.profile.contacts)
-            .map(key => {
-                return <Contact key={key} contactTitle={key} 
-                contactValue={props.profile.contacts[key]} />
-            })
-       
-       }
-       {  displayContact &&   <Button onClick={()=>showContact(false)} name={'hide'}/> }
+            {
+
+                displayContact &&
+
+                Object.keys(props.profile.contacts)
+
+                    .map(key => {
+                        console.log(key,props.profile.contacts)
+                        return <Contact key={key} contactTitle={key}
+                            contactValue={props.profile.contacts[key]} />
+                    })
+
+            }
+            {displayContact && <Button onClick={() => showContact(false)} name={'hide'} />}
 
 
-            {props.isOwner ? <div><Button onClick={props.goToEditMode} name={'Изменить информацию'}/></div>: <div></div>}
+            {props.isOwner ? <div><Button onClick={props.goToEditMode} name={'Изменить информацию'} /></div> : <div></div>}
         </div>
 
     </div>
